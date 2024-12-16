@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dienstleistungen - Finvest Treuhand AG</title>
+
+    <!-- CSS einbinden -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JavaScript einbinden -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Grüner Balken oben -->
+        <div class="green-bar">
+            <a href="tel:+41715341411">
+                <img src="images/phone-line-icon.png" alt="Telefon Icon">
+                <span>+41 71 534 14 11</span>
+            </a>
+            <span>|</span>
+            <a href="mailto:info@finvest-treuhand.ch">
+                <img src="images/envelope-line-icon.png" alt="E-Mail Icon">
+                <span>info@finvest-treuhand.ch</span>
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Logo1.png" alt="Finvest Logo">
+                </a>
+            </div>
+
+            <!-- Navigationslinks -->
+            <div class="links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="active">Über uns</a>
+                    <div class="dropdown-content">
+                        <a href="team.html">Unser Team</a>
+                        <a href="location.html">Standort</a>
+                        <a href="jobs.html">Offene Stellen</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="services.html">Treuhand</a>
+                    <div class="dropdown-content">
+                        <a href="tax-advice.html">Steuerberatung</a>
+                        <a href="business-consulting.html">Unternehmensberatung</a>
+                    </div>
+                </div>
+                <a href="contact.html">Kontakt</a>
+            </div>
+
+            <!-- Hamburger-Menü für kleinere Bildschirme -->
+            <div class="p-menu1">
+                <input type="checkbox" id="toggle1">
+                <label class="hamburger1" for="toggle1">
+                    <div class="top"></div>
+                    <div class="meat"></div>
+                    <div class="bottom"></div>
+                </label>
+    
+                <!-- Menü für das Hamburger-Menü -->
+            <nav class="menu1">
+                <a href="index.html" class="active">Home</a>
+                
+                <!-- Dropdown für "Über uns" -->
+                <div class="hamburger-dropdown">
+                    <a href="about.html">Über uns</a>
+                    <div class="hamburger-submenu">
+                        <a href="team.html">Unser Team</a>
+                        <a href="location.html">Standort</a>
+                        <a href="jobs.html">Offene Stellen</a>
+                    </div>
+                </div>
+            
+                <!-- Dropdown für "Treuhand" -->
+                <div class="hamburger-dropdown">
+                    <a href="services.html">Treuhand</a>
+                    <div class="hamburger-submenu">
+                        <a href="tax-advice.html">Steuerberatung</a>
+                        <a href="business-consulting.html">Unternehmensberatung</a>
+                    </div>
+                </div>
+            
+                <a href="contact.html">Kontakt</a>
+            </nav>
+            
+            
+        </div>
+    </header>
+
+    <div class="services-section full-screen">
+        <h2>Dienstleistungen</h2>
+        <hr class="section-divider">
+        <div class="services-container">
+            <a href="tax-advice.html" class="service-item">
+                <img src="images/steuerberatung.jpg" alt="Steuerberatung">
+                <div class="service-title">Steuerberatung</div>
+            </a>
+            <a href="business-consulting.html" class="service-item">
+                <img src="images/unternehmensberatung.jpg" alt="Unternehmensberatung">
+                <div class="service-title">Unternehmensberatung</div>
+            </a>
+            <a href="accounting.html" class="service-item">
+                <img src="images/rechnungswesen.jpg" alt="Rechnungswesen">
+                <div class="service-title">Rechnungswesen</div>
+            </a>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="grey-footer-section">
+            <div class="footer-container">
+                <!-- Kontakt Informationen -->
+                <div class="footer-column">
+                    <h3 class="footer-title">KONTAKT</h3>
+                    <hr class="footer-divider">
+                    <p>
+                        Finvest Treuhand AG<br>
+                        Hauptstrasse 115A<br>
+                        9430 St.Margrethen<br>
+                        Schweiz
+                    </p>
+                    <p>
+                        T: <a href="tel:+41715341411" class="footer-link">+41 71 534 14 11</a><br>
+                        E: <a href="mailto:info@finvest-treuhand.ch" class="footer-link">info@finvest-treuhand.ch</a>
+                    </p>
+                </div>
+
+                <!-- Öffnungszeiten -->
+                <div class="footer-column">
+                    <h3 class="footer-title">ÖFFNUNGSZEITEN</h3>
+                    <hr class="footer-divider">
+                    <table class="opening-hours">
+                        <tr>
+                            <td>Mo-Fr</td>
+                            <td>08:00–12:00, 13:30–17:30</td>
+                        </tr>
+                        <tr>
+                            <td>Sa-So</td>
+                            <td>Geschlossen</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="main-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    &copy; Finvest Treuhand AG 2024 | All Rights Reserved | Website by M
+                </div>
+                <div class="footer-right">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="rechtliches.html">Rechtliches</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

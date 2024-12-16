@@ -1,0 +1,1777 @@
+/* Entfernt Standardabstand des Browsers */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Grüner Balken oben */
+.green-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #ccd544;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.green-bar a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.green-bar img {
+    height: 25px;
+    width: auto;
+}
+
+/* Navigation */
+.container {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 50px;
+    z-index: 999;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Stil für das Logo */
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+/* Links in der Navigation */
+.links {
+    display: flex;
+    gap: 30px;
+    margin-right: 100px;
+    position: relative;
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.links a.active {
+    color: #ccd544; /* Grünliche Farbe für aktiven Link */
+}
+
+/* Dropdown-Menü */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Abschnitt für Seiten wie "Über uns" */
+.about-section, .location-section, .jobs-section {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.about-section {
+    padding-top: 120px; /* Platz für Header */
+}
+
+
+.about-text, .location-text, .jobs-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d3d3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-text h1, .location-text h1, .jobs-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccd544;
+    margin-bottom: 10px;
+}
+
+.about-text hr, .location-text hr, .jobs-text hr {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544;
+    border: none;
+    margin: 0 auto 20px auto;
+}
+
+/* Bilder im Header (Index-Seite) */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Bildschirmfüllend */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Unsichtbar zu Beginn */
+    animation: fadeIn 3s ease-in-out forwards;
+    /* Animation hinzufügen */
+}
+
+.header-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Über dem Overlay */
+    text-align: center;
+    font-size: 36px;
+    /* Schriftgröße */
+    font-weight: bold;
+    line-height: 1.5;
+    /* Zeilenabstand */
+    color: rgb(255, 255, 255);
+    /* Vordergrundtext in Weiß */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Subtiler Schatten für bessere Lesbarkeit */
+    opacity: 0;
+    /* Unsichtbar zu Beginn */
+    animation: fadeIn 3s ease-in-out forwards;
+    /* Animation hinzufügen */
+}
+
+/* Keyframes für den Fade-In-Effekt */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        /* Unsichtbar */
+        filter: brightness(50%);
+        /* Optional: dunkler Start */
+    }
+
+    100% {
+        opacity: 1;
+        /* Voll sichtbar */
+        filter: brightness(100%);
+        /* Originalhelligkeit */
+    }
+}
+
+/* Dienstleistungen Bilder (Index-Seite) */
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.service-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.service-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3d3d3d;
+    text-decoration: none;
+}
+.service-title a {
+    text-decoration: none; /* Sicherstellen, dass Links keine Unterstreichung haben */
+    color: inherit; /* Erbt die Textfarbe des übergeordneten Elements */
+}
+
+/* Spezifisches Styling für die Indexseite */
+body.index .container {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.index .links a {
+    color: white;
+}
+
+body.index .dropdown-content a {
+    color: black; /* Dropdown-Menü-Text bleibt immer schwarz */
+}
+
+body.index.scrolled .container {
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.index.scrolled .links a {
+    color: black;
+}
+
+/* "Unternehmen" Abschnitt */
+.company-section {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.company-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccd544;
+}
+
+.company-section hr {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544;
+    border: none;
+    margin: 10px auto 20px;
+}
+
+.company-section p {
+    font-size: 16px;
+    color: #3d3d3d;
+    line-height: 1.6;
+}
+
+/* Dienstleistungs-Sektion */
+.services-section {
+    text-align: center;
+    margin: 140px auto;
+    padding: 140px 20px; /* Padding oben und unten für Abstand */
+    background-color: #ffffff; /* Helle graue Hintergrundfarbe */
+    border-top: 2px solid #ffffff; /* Optional: Trennlinie oben */
+    border-bottom: 2px solid #ffffff; /* Optional: Trennlinie unten */
+}
+
+.grey-services-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px 20px; /* Padding oben und unten für Abstand */
+    background-color: #f9f9f9; /* Helle graue Hintergrundfarbe */
+    border-top: 2px solid #ffffff; /* Optional: Trennlinie oben */
+    border-bottom: 2px solid #ffffff; /* Optional: Trennlinie unten */
+}
+
+
+.services-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccd544; /* Farbe für den Titel */
+    margin-bottom: 10px;
+}
+
+.services-section .section-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544;
+    margin: 0 auto 20px auto;
+    border: none;
+    
+}
+
+/* Container für Dienstleistungen */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Unterstützt mehrere Zeilen für kleinere Bildschirme */
+    height: auto;
+}
+
+/* Einzelnes Dienstleistungs-Item */
+.service-item {
+    flex: 1 1 300px; /* Flexbox-Item mit minimaler Breite */
+    max-width: 300px;
+    text-align: center;
+    border-radius: 8px; /* Entfernt abgerundete Ecken */
+    overflow: hidden;
+    box-shadow: none; /* Entfernt den Schatten */
+    background-color: transparent; /* Setzt den Hintergrund transparent */
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05); /* Heller grauer Hintergrund */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+}
+
+.service-item:hover img {
+    filter: grayscale(50%) brightness(90%); /* Bild wird gräulicher und dunkler */
+}
+
+
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-title {
+    background-color: #ccd544;
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Über uns Abschnitt */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Zentriert den Text und das Bild vertikal */
+    height: 100vh; /* Übernimmt die volle Höhe des Viewports */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+    box-sizing: border-box; /* Berücksichtigt Padding */
+}
+
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d3d3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Zentriert den Text vertikal */
+    text-align: center; /* Zentriert den Titel horizontal */
+}
+
+.about-text h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccd544;
+    margin-bottom: 10px;
+}
+
+.about-text hr {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544;
+    border: none;
+    margin: 0 auto 20px auto; /* Zentriert die Trennlinie */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Footer */
+.main-footer {
+    background-color: #ccd544; /* Dein Farbstil */
+    color: #3d3d3d; /* Dunkelgraue Schriftfarbe */
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Für kleinere Bildschirme */
+    gap: 10px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    display: flex;
+    gap: 20px; /* Abstand zwischen den Links */
+}
+
+.footer-right a {
+    color: #3d3d3d; /* Dunkelgraue Links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: black; /* Schwarzer Text beim Hover */
+}
+
+/* Footer-Sektion */
+.footer-section {
+    background-color: white; /* Weißer Hintergrund */
+    padding: 50px 20px;
+    border-top: 2px solid #ffffff; /* Optional: Trennlinie oben */
+}
+
+
+.grey-footer-section {
+    background-color: #f9f9f9; /* Weißer Hintergrund */
+    padding: 50px 20px;
+    border-top: 2px solid #ffffff; /* Optional: Trennlinie oben */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Unterstützt kleinere Bildschirme */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1 1 300px; /* Flexbox-Item mit minimaler Breite */
+    max-width: 300px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ccd544; /* Dein Farbstil für Titel */
+    margin-bottom: 10px;
+}
+
+.footer-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544; /* Dein Farbstil für Trennlinie */
+    margin: 0 0 20px 0;
+    border: none;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #3d3d3d; /* Dunkelgrau für Links */
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ccd544; /* Grünlicher Farbwechsel beim Hover */
+}
+
+.opening-hours {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.opening-hours td {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d3d3d; /* Standardfarbe für Text */
+    padding: 5px 0;
+} 
+
+
+/* Team-Abschnitt */
+.team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    margin-top: 140px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Team-Header mit Text */
+.team-header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px; /* Abstand zu den Team-Mitgliedern */
+    height: calc(( 100vh / 2 ) - 140px);
+}
+
+.team-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ccd544; /* Grüner Farbton */
+    margin-bottom: 10px;
+}
+
+.team-header p {
+    font-size: 18px;
+    color: #3d3d3d; /* Dunkelgrau für den Text */
+    line-height: 1.6;
+}
+
+/* Container für Team-Mitglieder */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Abstand zwischen den Team-Mitgliedern */
+    width: 100%;
+    height: calc(( 100vh / 2 ) - 120px);
+}
+
+/* Einzelne Team-Mitglieder */
+.team-member {
+    flex: 1 1 calc(20% - 40px); /* Passt 5 Mitglieder pro Reihe an */
+    max-width: calc(20% - 40px);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.team-member h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccd544; /* Grüner Farbton */
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 18px;
+    color: #3d3d3d; /* Dunkelgrau für den Text */
+    margin: 4px 0;
+}
+
+
+.section-divider {
+    width: 50px; /* Einheitliche Breite */
+    height: 2px; /* Einheitliche Höhe */
+    background-color: #ccd544; /* Einheitliche Farbe */
+    border: none; /* Entfernt Standardrahmen */
+    margin: 0 auto 20px auto; /* Zentriert und mit Abstand unten */
+    display: block; /* Sicherstellen, dass es wie ein Blockelement behandelt wird */
+}
+
+
+.location-link {
+    color: #ccd544; /* Grüner Farbton */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.location-link:hover {
+    color: #a0b531; /* Dunkleres Grün beim Hover */
+}
+
+
+.jobs-section {
+    display: flex;
+    flex-direction: column; /* Stapelt die Elemente vertikal */
+    align-items: center; /* Zentriert die Elemente horizontal */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 180px; /* Abstand um den Inhalt herum */
+    gap: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: visible;
+}
+
+.job-item {
+    max-width: calc(50vh); /* Definiert die maximale Breite */
+    width: 100%; /* Nimmt 100% der verfügbaren Breite ein */
+    background-color: #f9f9f9; /* Hellgrauer Hintergrund */
+    border: 1px solid #ddd; /* Rahmen um die Box */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Schatten */
+    margin: 0 auto; /* Zentriert die Box */
+    overflow: hidden; /* Verhindert Überlauf */
+    transition: all 0.3s ease; /* Weiche Übergänge */
+    padding: 10px 20px; /* Innenabstand */
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between; /* Abstand zwischen Titel und Icon */
+    align-items: center; /* Zentriert den Titel und das Icon vertikal */
+    cursor: pointer;
+}
+
+.job-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+    transition: color 0.3s ease;
+    min-width: 800px;
+}
+
+.job-header:hover h2 {
+    color: #ccd544; /* Grüner Farbton beim Hover */
+}
+
+.toggle-icon {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d3d3d;
+    transition: color 0.3s ease;
+}
+
+.job-description {
+    display: none; /* Standardmäßig ausgeblendet */
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #3d3d3d;
+}
+
+.job-description p {
+    margin: 10px 0;
+}
+
+.job-header:hover .toggle-icon {
+    color: #ccd544; /* Grüner Farbton beim Hover */
+}
+
+
+/* Vollbild-Darstellung für die Dienstleistungen */
+.full-screen {
+    height: calc(100vh - 100px); /* Höhe des Fensters */
+    display: flex;
+    flex-direction: column; /* Elemente vertikal anordnen */
+    justify-content: center; /* Vertikal zentrieren */
+    align-items: center; /* Horizontal zentrieren */
+    padding: 140px 20px;
+    box-sizing: border-box;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertikale Zentrierung der Icons */
+    gap: 20px;
+    flex-wrap: wrap; /* Unterstützt mehrere Zeilen für kleinere Bildschirme */
+    width: 100%;
+    height: auto;
+}
+
+.service-item {
+    flex: 1 1 calc(33.333% - 20px); /* Drei Spalten pro Zeile */
+    max-width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none; /* Entfernt Unterstreichung der Links */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px; /* Einheitliche Höhe für Bilder */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.service-item .service-title {
+    background-color: #ccd544; /* Grüner Farbton */
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Leichtes Anheben beim Hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+    background-color: rgba(0, 0, 0, 0.05); /* Heller Hintergrund */
+}
+
+.service-item:hover img {
+    filter: grayscale(50%) brightness(90%); /* Effekt beim Hover */
+}
+
+.service-item:hover .service-title {
+    background-color: #a0b531; /* Dunkleres Grün beim Hover */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+
+.tax-advice {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 140px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    color: #3d3d3d;
+}
+
+.tax-advice__top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tax-advice__text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.tax-advice__text h1 {
+    font-size: 28px;
+    color: #ccd544;
+}
+
+.tax-advice__divider {
+    width: 60px;
+    height: 3px;
+    background-color: #a0b531;
+    margin: 10px 0;
+    border: none;
+}
+
+.tax-advice__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.tax-advice__image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tax-advice__content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.tax-advice__column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.tax-advice__subheading {
+    font-size: 20px;
+    color: #ccd544;
+    margin-bottom: 10px;
+}
+
+
+.business-consulting {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 140px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    color: #3d3d3d;
+}
+
+.business-consulting__top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.business-consulting__text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.business-consulting__text h1 {
+    font-size: 28px;
+    color: #ccd544;
+}
+
+.business-consulting__divider {
+    width: 60px;
+    height: 3px;
+    background-color: #a0b531;
+    margin: 10px 0;
+    border: none;
+}
+
+.business-consulting__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.business-consulting__image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.business-consulting__content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.business-consulting__column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.business-consulting__subheading {
+    font-size: 20px;
+    color: #ccd544;
+    margin-bottom: 10px;
+}
+
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap; /* Unterstützt kleinere Bildschirme */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    gap: 40px; /* Abstand zwischen den Elementen */
+    margin: 40px auto;
+    margin-top: 160px;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Zentriert den Textinhalt */
+    height: calc(100vh - 140px);
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* Text bündig zur linken Seite */
+    margin: 0 auto; /* Zentriert die gesamte Spalte */
+}
+
+.contact-left h1, 
+.contact-right h2 {
+    text-align: left; /* Zentriert die Überschriften */
+    font-size: 28px;
+    color: #ccd544;
+    margin-bottom: 20px;
+}
+
+.contact-left label, 
+.contact-right address, 
+.contact-right table td {
+    text-align: left; /* Text bündig zur linken Seite */
+}
+
+.contact-left .form-group {
+    display: flex;
+    flex-direction: column; /* Felder untereinander anordnen */
+    gap: 20px;
+}
+
+.contact-left input, 
+.contact-left select, 
+.contact-left textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left; /* Text innerhalb der Felder bündig links */
+}
+
+.contact-right table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.contact-right td {
+    padding: 8px;
+    text-align: left; /* Text in Tabellenzellen bündig links */
+}
+
+.contact-right h2 {
+    font-size: 20px;
+    color: #ccd544;
+    text-align: left; /* Titel linksbündig ausrichten */
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #ccd544; /* Unternehmensgrün */
+    margin: 0 auto 20px auto; /* Zentriert durch Auto-Margin */
+    border: none;
+    display: block; /* Sicherstellen, dass es als Block-Element behandelt wird */
+}
+
+
+.contact-right address, 
+.contact-right table {
+    text-align: left; /* Inhalte bleiben linksbündig */
+}
+
+.contact-right table td {
+    padding: 8px;
+    text-align: left; /* Inhalte der Tabellenzellen linksbündig */
+}
+
+.contact-left button {
+    background-color: #ccd544; /* Deine Unternehmensfarbe */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.contact-left button:hover {
+    background-color: #a0b531; /* Etwas dunklere Farbe für Hover */
+}
+
+.contact-left .form-group {
+    display: flex;
+    flex-direction: column; /* Alle Felder untereinander anordnen */
+    gap: 10px; /* Abstand zwischen den Eingabefeldern */
+}
+
+
+.impressum-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #3d3d3d; /* Standard-Textfarbe */
+    line-height: 1.6;
+    text-align: left; /* Links ausgerichtet */
+    margin-top: 160px;
+}
+
+.impressum-section h1 {
+    font-size: 28px;
+    color: #ccd544; /* Grüner Farbton */
+    margin-bottom: 10px;
+}
+
+.impressum-section .section-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544; /* Grüner Farbton */
+    border: none;
+    margin: 0 0 20px 0; /* Links ausgerichtet */
+}
+
+.impressum-section p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #3d3d3d;
+}
+
+.impressum-section strong {
+    color: #ccd544; /* Grüner Farbton für Hervorhebungen */
+}
+
+.impressum-section a {
+    color: #ccd544; /* Grüner Farbton für Links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.impressum-section a:hover {
+    color: #a0b531; /* Dunklerer Grün-Ton beim Hover */
+}
+
+
+.legal-section {
+    max-width: 800px; /* Maximale Breite für zentrierten Inhalt */
+    margin: 50px auto; /* Zentriert die gesamte Sektion */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #3d3d3d; /* Standard-Textfarbe */
+    line-height: 1.6; /* Bessere Lesbarkeit */
+    text-align: left; /* Text linksbündig */
+    margin-top: 160px;
+}
+
+.legal-section h1 {
+    font-size: 28px;
+    color: #ccd544; /* Grüner Farbton */
+    margin-bottom: 10px;
+    text-align: left; /* Links ausgerichtet */
+}
+
+.legal-section h2 {
+    font-size: 20px;
+    color: #ccd544; /* Grüner Farbton */
+    margin: 30px 0 10px 0;
+    text-align: left; /* Links ausgerichtet */
+}
+
+.legal-section .section-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #ccd544; /* Grüner Farbton */
+    border: none;
+    margin: 0 0 20px 0; /* Links ausgerichtet */
+}
+
+.legal-section p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #3d3d3d;
+}
+
+.legal-section strong {
+    color: #ccd544; /* Grüner Farbton für Hervorhebungen */
+}
+
+.legal-section a {
+    color: #ccd544; /* Grüner Farbton für Links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-section a:hover {
+    color: #a0b531; /* Dunklerer Grünton beim Hover */
+}
+
+
+/* Zentrierter Container */
+.content-container {
+    max-width: 800px; /* Maximale Breite des Containers */
+    margin: 50px auto; /* Zentriert den Container horizontal und vertikal */
+    padding: 20px; /* Innenabstand für bessere Lesbarkeit */
+    background-color: #ffffff; /* Weißer Hintergrund */
+    border-radius: 8px; /* Abgerundete Ecken */
+    
+    text-align: center; /* Zentriert den Text innerhalb des Containers */
+}
+
+/* Titel */
+.content-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccd544; /* Unternehmensgrün */
+    margin-bottom: 10px;
+    
+}
+
+/* Trennlinie */
+.content-container .section-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #ccd544; /* Unternehmensgrün */
+    border: none;
+    margin: 10px auto; /* Zentriert die Trennlinie */
+}
+
+/* Text */
+.content-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d3d3d; /* Dunkelgrauer Text */
+    margin-bottom: 20px;
+    text-align: justify; /* Optional: Gleicht Text aus */
+}
+
+.grey-services-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ccd544; /* Unternehmensgrün */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Stil für Links in Service-Elementen */
+.service-item a {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: inherit; /* Erbt die Farbe vom umgebenden Container */
+    display: block; /* Stellt sicher, dass der gesamte Block anklickbar ist */
+}
+
+/* Stil für den Titel innerhalb von Service-Elementen */
+.service-title {
+    background-color: #ccd544;
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-section ul {
+    margin: 20px 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.about-section ul li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d3d3d;
+}
+
+
+.team-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3d3d3d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.team-header p strong {
+    color: #ccd544; /* Grüner Farbton für Betonungen */
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.team-member {
+    flex: 1 1 calc(33.333% - 40px); /* Drei Mitglieder pro Reihe */
+    max-width: 300px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.team-member h2 {
+    font-size: 20px;
+    color: #ccd544; /* Grüner Farbton */
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #3d3d3d;
+    margin: 0;
+}
+
+.jobs-header h1 {
+    color: #ccd544; /* Grüner Farbton */
+    font-size: 32px; /* Optional: Schriftgröße anpassen */
+    font-weight: bold;
+    text-align: center; /* Optional: Zentrierung */
+}
+
+/* Divider für das Kontaktformular */
+.contact-form-divider {
+    width: 60px;
+    height: 2px;
+    margin-left: 0; /* Kein automatischer Abstand */
+    text-align: left;
+    background-color: #ccd544;
+    border: none;
+}
+
+/* Divider für die Kontaktdaten */
+.contact-data-divider {
+    width: 60px;
+    height: 2px;
+    margin-left: 0; /* Kein automatischer Abstand */
+    text-align: left;
+    background-color: #ccd544;
+    border: none;
+}
+
+/* Divider für die Öffnungszeiten */
+.contact-opening-divider {
+    width: 60px;
+    height: 2px;
+    margin-left: 0; /* Kein automatischer Abstand */
+    text-align: left;
+    background-color: #ccd544;
+    border: none;
+}
+
+address a {
+    color: inherit; /* Erbt die Textfarbe vom übergeordneten Element */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+address a:hover {
+    color: #ccd544; /* Optionale Hover-Farbe */
+}
+
+@media (min-width: 770px) {
+
+    .hamburger1{ 
+        display: none;
+    }
+
+    .p-menu1{ 
+        display: none;
+    }
+
+
+}
+
+
+/* Grüner Balken oben - Mobile Anpassung */
+@media (max-width: 768px) {
+    .green-bar {
+        justify-content: center; /* Zentriert die Icons und das Trennzeichen */
+        padding: 0 20px; /* Weniger Innenabstand für mobile Ansicht */
+    }
+
+    .green-bar span {
+        font-size: 16px; /* Beibehaltung des Trennzeichens in kleiner Größe */
+        line-height: 1; /* Optimierung der vertikalen Ausrichtung */
+    }
+
+    .green-bar a span {
+        display: none; /* Versteckt den Text für Telefonnummer und E-Mail */
+    }
+
+    .green-bar a {
+        gap: 0; /* Entfernt den Abstand innerhalb der Links */
+    }
+
+    .green-bar img {
+        height: 20px; /* Verkleinert die Icons für mobile Ansicht */
+        width: auto;
+    }
+}
+
+
+
+
+/* Normale Navigation für große Bildschirme */
+.links {
+    display: flex; /* Normale Navigation anzeigen */
+    gap: 30px;
+}
+
+.p-menu1 {
+    display: none; /* Hamburger-Menü ausblenden */
+}
+
+#toggle1{
+    display: none;
+}
+/* Hamburger-Menü und versteckte Navigation bei kleinen Bildschirmen */
+@media (max-width: 770px) {
+    .links {
+        display: none; /* Normale Navigation ausblenden */
+    }
+
+    .p-menu1 {
+        display: block; /* Hamburger-Menü anzeigen */
+        margin-right: calc(100px);
+
+    }
+    .hamburger1 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32px; /* Breite des Hamburger-Menüs */
+        height: 25px; /* Höhe des Hamburger-Menüs */
+        cursor: pointer;
+        z-index: 1200;
+        
+
+    }
+
+    .hamburger1 div {
+        background-color: black; /* Farbe der Linien */
+        height: 4px; /* Höhe der Linien */
+        width: 100%; /* Breite der Linien */
+        border-radius: 2px; /* Runde Kanten */
+        transition: all 0.3s ease; /* Sanfter Übergang */
+    }
+
+    .menu1 {
+        position: fixed; /* Vollflächige Abdeckung */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ccd544;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+        opacity: 0; /* Unsichtbar im Ausgangszustand */
+        pointer-events: none; /* Deaktiviert Interaktion im Ausgangszustand */
+        transition: opacity 0.3s ease;
+        z-index: 1100;
+    
+    }
+
+    #toggle1:checked ~ .menu1 {
+        opacity: 1; /* Menü wird sichtbar */
+        pointer-events: auto; /* Interaktion erlaubt */
+        
+    }
+
+    .menu1 a {
+        font: 700 36px 'Oswald', sans-serif; /* Schrift für Mobilgeräte */
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-align: center;
+    }
+
+    .menu1 a:hover {
+        color: #000000; /* Textfarbe wechselt zu Dunkelblau */
+        border-radius: 8px;
+    }
+
+
+    #toggle1:checked + .hamburger1 .top {
+        transform: rotate(45deg);
+        transform-origin: top left;
+        
+    }
+    
+    #toggle1:checked + .hamburger1 .meat {
+        opacity: 0; /* Mittlere Linie verschwindet */
+        
+    }
+    
+    #toggle1:checked + .hamburger1 .bottom {
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
+        
+    }
+
+    /* Stil für Dropdowns im Hamburger-Menü */
+    .hamburger-dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        
+    }
+
+    .hamburger-dropdown > a {
+        font-size: 36px; /* Titel-Link normal groß */
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    .hamburger-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-left: 20px; /* Einrücken der Unterlinks */
+        text-align: center;
+    }
+
+    .hamburger-submenu a {
+        font-size: 18px; /* Kleinere Schrift für Unterseiten */
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .hamburger-submenu a:hover {
+        color: #000; /* Dunklere Farbe beim Hover */
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 100px; /* Kleinere Header-Höhe */
+    }
+
+    footer {
+        height: 120px; /* Kleinere Footer-Höhe */
+    }
+
+    main {
+        padding-top: 110px; /* Reduziertes Padding oben */
+        padding-bottom: 130px; /* Reduziertes Padding unten */
+        min-height: calc(100vh - 230px);
+    }
+
+    .about-section {
+        flex-direction: column; /* Inhalte untereinander anordnen */
+        text-align: center;
+    }
+
+    .about-image img {
+        margin-top: 20px;
+    }
+}
+
+/* Allgemeine Anpassung für kleinere Bildschirme */
+@media (max-width: 600px) {
+    main {
+        padding-top: 120px; /* Platz für Header */
+        padding-bottom: 60px; /* Platz für Footer */
+        box-sizing: border-box;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column; /* Stapelt die Elemente vertikal */
+        justify-content: space-between; /* Verteilt Inhalt gleichmäßig */
+        align-items: center;
+        min-height: calc(100vh - 180px); /* Vermeidet Kollision mit Header und Footer */
+        box-sizing: border-box;
+        padding: 10px; /* Anpassung des Innenabstands */
+    }
+
+    .about-text {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.4;
+        padding: 10px; /* Anpassung des Abstands */
+        box-sizing: border-box;
+    }
+
+    .about-image img {
+        width: 100%; /* Bild nimmt die gesamte Breite ein */
+        max-height: 250px; /* Verhindert, dass das Bild zu groß wird */
+        object-fit: cover; /* Behält Seitenverhältnis bei */
+        border-radius: 8px;
+    }
+}
+
+/* Für noch kleinere Bildschirme */
+@media (max-width: 400px) {
+    .about-section {
+        padding: 5px; /* Weniger Padding */
+    }
+
+    .about-image img {
+        max-height: 200px; /* Kleinere Höhe für das Bild */
+    }
+
+    .about-text {
+        font-size: 12px; /* Kleinere Schriftgröße */
+    }
+}
+
+/* Job-Boxen Anpassung für iPad und kleinere Geräte */
+@media (max-width: 768px) {
+    .job-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Abstand zwischen den Boxen */
+        padding: 0 20px; /* Innenabstand an den Seiten */
+        max-width: calc(40vh);
+    }
+
+    .job-item {
+        max-width: 100%; /* Volle Breite der Boxen */
+        margin: 0 auto; /* Zentriert die Box */
+        padding: 15px; /* Innenabstand der Boxen */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    }
+
+    .job-header h2 {
+        font-size: 20px; /* Kleinere Überschrift */
+    }
+
+    .toggle-icon {
+        font-size: 18px; /* Kleinere Toggle-Icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .job-list{
+        max-width: calc(30vh);
+
+    }
+
+    .job-item {
+        padding: 10px; /* Weniger Innenabstand für kleinere Bildschirme */
+        border-radius: 6px; /* Abgerundete Ecken */
+    }
+
+    .job-header h2 {
+        font-size: 18px; /* Noch kleinere Schriftgröße */
+    }
+
+    .job-description p {
+        font-size: 14px; /* Kleinere Schrift für Text */
+    }
+
+    .toggle-icon {
+        font-size: 16px; /* Icon weiter verkleinern */
+    }
+}
+
+/* Vertikale Ausrichtung und kleinere Boxen */
+@media (max-width: 590px) {
+    
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 0 10px;
+        
+        height: auto;
+        flex-wrap: wrap;
+        
+    }
+      
+    .service-item {
+        display: block; /* Entfernt Flexbox */
+        width: 100%; /* Volle Breite */
+        max-width: calc(80vh); /* Begrenzung der maximalen Breite */
+        margin: 0 auto; /* Zentriert das Element */
+        background: none; /* Entfernt Hintergrundfarbe */
+        box-shadow: none; /* Entfernt Schatten */
+        border: none; /* Entfernt den Rahmen */
+        overflow: visible; /* Verhindert abgeschnittenen Inhalt */
+        padding: 0; /* Entfernt Padding */
+        border-radius: 0; /* Keine abgerundeten Ecken */
+    }
+
+    .service-item img {
+        width: 100%; /* Bild nimmt gesamte Breite ein */
+        height: 150px; /* Feste Höhe für das Bild */
+        object-fit: cover; /* Beibehaltung des Seitenverhältnisses */
+    }
+
+    .service-title {
+        font-size: 16px; /* Kleinere Schriftgröße für Titel */
+        padding: 10px 0; /* Innenabstand für Titel */
+        background-color: #ccd544; /* Hintergrundfarbe */
+        color: white; /* Textfarbe */
+        text-align: center; /* Zentrierter Text */
+    }
+}
+
+
+/* Team-Header auf mobilen Bildschirmen */
+@media (max-width: 768px) {
+    .team-header h1 {
+        font-size: 24px; /* Kleinere Schriftgröße */
+        margin-bottom: 5px; /* Weniger Abstand */
+    }
+
+    .team-header p {
+        font-size: 14px; /* Kleinere Schriftgröße */
+        line-height: 1.4; /* Engerer Zeilenabstand */
+        margin-bottom: 10px; /* Weniger Abstand */
+        padding: 0 10px; /* Innenabstand hinzufügen */
+    }
+}
+
+/* Reduzierter Abstand des Titels auf mobilen Geräten */
+@media (max-width: 768px) {
+    .team-section {
+        margin-top: 100px; /* Reduziere den Abstand oben für die ganze Section */
+        padding-top: 20px; /* Weniger Innenabstand oben */
+    }
+
+    .team-header {
+        margin-top: 0; /* Entferne zusätzlichen Abstand oben */
+        padding-top: 0; /* Setze Padding oben auf 0 */
+    }
+
+    .team-header h1 {
+        font-size: 24px; /* Kleinere Schriftgröße für kleinere Geräte */
+        margin-top: 10px; /* Minimaler Abstand von oben */
+        margin-bottom: 5px; /* Weniger Abstand nach unten */
+    }
+
+    .team-header .section-divider {
+        margin: 5px auto; /* Zentrierte Linie mit weniger Abstand */
+    }
+
+    .team-header p {
+        font-size: 14px; /* Kleinere Schriftgröße */
+        margin-top: 10px; /* Abstand nach oben reduzieren */
+        margin-bottom: 10px; /* Reduziere Abstand nach unten */
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    main {
+        padding-top: 0px;
+    }
+
+    .location-section{
+        padding-top: 0px;
+        margin-top: 0px;
+        
+    }
+
+    .jobs-section{
+        padding-top: 80px;   
+    }
+
+    .location-section{
+        padding-top: 0px;
+        margin-top: 0px;   
+    }
+}
+
+
+/* Reduziertes Padding und Margin für Titel und Kontaktinformationen auf mobilen Geräten */
+@media (max-width: 768px) {
+    /* Titel-Abstand optimieren */
+    .contact-section h2, 
+    .contact-section h1, 
+    .footer-title {
+        font-size: 20px; /* Kleinere Schriftgröße */
+        margin-top: 10px; /* Minimaler Abstand von oben */
+        margin-bottom: 5px; /* Kleiner Abstand nach unten */
+        padding-top: 0; /* Kein zusätzliches Padding */
+    }
+
+    /* Allgemeiner Container-Abstand für Kontaktbereiche */
+    .contact-section,
+    .footer-container {
+        margin-top: 20px; /* Reduzierter Abstand nach oben */
+        padding-top: 10px; /* Weniger Padding oben */
+        padding-bottom: 10px; /* Weniger Padding unten */
+    }
+
+    /* Textbereich und Tabellen optimieren */
+    .contact-right table,
+    .contact-right address {
+        margin-top: 5px; /* Reduziere vertikalen Abstand */
+        font-size: 14px; /* Kleinere Schriftgröße */
+    }
+
+    /* Öffnungszeiten-Tabellen optimieren */
+    .opening-hours td {
+        font-size: 14px; /* Kleinere Schrift für Tabellen */
+        padding: 3px 5px; /* Weniger Padding in Zellen */
+    }
+}
+
+/* Weitere Reduzierungen für extrem kleine Bildschirme */
+@media (max-width: 480px) {
+    .contact-section h2, 
+    .footer-title {
+        font-size: 18px; /* Noch kleinere Schriftgröße */
+        margin-top: 5px;
+        margin-bottom: 3px;
+    }
+
+    .contact-section, .footer-container {
+        margin-top: 10px;
+        padding: 5px; /* Minimales Padding */
+    }
+
+    .opening-hours td {
+        font-size: 12px; /* Kleinste Schrift für beste Darstellung */
+    }
+}

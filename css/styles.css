@@ -1778,4 +1778,8 @@ address a:hover {
     .opening-hours td {
         font-size: 12px; /* Kleinste Schrift für beste Darstellung */
     }
+
+    #contact-main{
+        padding-bottom: 80px;
+    }
 }

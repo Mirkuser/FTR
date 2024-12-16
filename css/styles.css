@@ -1492,6 +1492,10 @@ address a:hover {
         height: 100px; /* Kleinere Header-Höhe */
     }
 
+    body.index header{
+        height: 0px;
+    }
+    
     footer {
         height: 120px; /* Kleinere Footer-Höhe */
     }
